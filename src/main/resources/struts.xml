@@ -3,15 +3,15 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
+<!-- .dtd 约束xml可能有哪些标签、不能有哪些标签 -->
 <struts>
-<!-- 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
-	<constant name="struts.devMode" value="true" />
-	<constant name="struts.allowed.action.names" value="[a-zA-Z0-9._!/\-]*"></constant>
- -->
-	<package name="main.java" namespace="/" extends="struts-default">
-		<action name="HelloWorldAction" class="main.java.HelloWorldAction"
-			method="execute">
-			<result name="success">/WEB-INF/content/welcome.jsp</result>
-		</action>
-	</package>
+	<!-- 包含其它的struct配置文件，可以每个controller或业务设置一个 -->
+	<include file="userInfoStructs.xml"></include>
+	<include file="actionStructs.xml"></include>
+
+	<!-- 在structs.xml定义常量节点，就不用使用单独的structs.properties文件 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" 
+		/> <constant name="struts.devMode" value="true" /> <constant name="struts.allowed.action.names" 
+		value="[a-zA-Z0-9._!/\-]*"></constant> -->
 </struts>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- .dtd 约束xml可能有哪些标签、不能有哪些标签 -->
+<struts>
+	<!-- struct一个包可以包含多个action -->
+	<package name="action" namespace="/" extends="struts-default">
+	  <!-- global-results 和 default-action-ref同时使用异常 -->
+		<!-- <global-results> <result name="error">/error.jsp</result> <result 
+			name="input">/error.jsp</result> </global-results> -->
+
+		<default-action-ref name="error"></default-action-ref>
+		<action name="error">
+			<result>/WEB-INF/content/error.jsp</result>
+		</action>
+
+
+		<action name="HelloWorldAction" class="action.HelloWorldAction"
+			method="execute">
+			<!-- 不指定name，默认指向success -->
+			<result name="success">/WEB-INF/content/welcome.jsp</result>
+		</action>
+
+		<action name="Add" class="action.HelloWorldAction" method="add">
+			<result>/WEB-INF/content/add.jsp</result>
+		</action>
+
+		<action name="Update" class="action.HelloWorldAction" method="update">
+			<result>/WEB-INF/content/update.jsp</result>
+		</action>
+	</package>
+
+
+</struts>
