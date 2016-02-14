@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="LoginToIndex" method="post">
+<form action="UserIndex" method="post">
  用户名： <input type="text" name="userName">
  密码： <input type="text" name="password">
  用户名一： <input type="text" name="userInfoList[0].userName">

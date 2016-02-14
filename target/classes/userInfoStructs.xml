@@ -9,14 +9,21 @@
 			<!-- 不指定name，默认指向success -->
 			<result>/WEB-INF/content/UserInfo/UserList.jsp</result>
 		</action>
-		
+
 		<action name="UserLogin" class="action.UserInfoAction" method="UserLogin">
 			<!-- 不指定name，默认指向success -->
 			<result>/WEB-INF/content/UserInfo/UserLogin.jsp</result>
+			<result name="input">/WEB-INF/content/UserInfo/UserLogin.jsp</result>
 		</action>
-		<action name="LoginToIndex" class="action.UserInfoAction" method="LoginToIndex">
-			<!-- 不指定name，默认指向success -->
-			<result>/WEB-INF/content/UserInfo/UserIndex.jsp</result>
+		<action name="UserIndex" class="action.UserInfoAction"
+			method="UserIndex">
+			<!-- type默认为dispatcher表示jsp，其它还包括velocity、freemarker等，
+			参见struct-default.xml中的result-types节点-->
+			<result type="dispatcher">/WEB-INF/content/UserInfo/UserIndex.jsp</result>
+            
 		</action>
+		
 	</package>
+	
+
 </struts>
