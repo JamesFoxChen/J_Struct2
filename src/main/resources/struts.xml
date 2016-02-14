@@ -11,6 +11,10 @@
 
 	<!-- 在structs.xml定义常量节点，就不用使用单独的structs.properties文件 -->
 	<constant name="struts.i18n.encoding" value="UTF-8" />
+	
+	<!-- 删除该节点或设置value=""效果相同 -->
+	<constant name="struts.action.extension" value="" />
+	
 	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" 
 		/> <constant name="struts.devMode" value="true" /> <constant name="struts.allowed.action.names" 
 		value="[a-zA-Z0-9._!/\-]*"></constant> -->

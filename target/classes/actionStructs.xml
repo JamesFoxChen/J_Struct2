@@ -11,10 +11,10 @@
 		<!-- <global-results> <result name="error">/error.jsp</result> <result 
 			name="input">/error.jsp</result> </global-results> -->
 
-		<default-action-ref name="error"></default-action-ref>
+	<!-- 	<default-action-ref name="error"></default-action-ref>
 		<action name="error">
 			<result>/WEB-INF/content/error.jsp</result>
-		</action>
+		</action> -->
 
 
 		<action name="HelloWorldAction" class="action.HelloWorldAction"

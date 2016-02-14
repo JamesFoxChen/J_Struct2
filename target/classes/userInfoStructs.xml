@@ -9,5 +9,14 @@
 			<!-- 不指定name，默认指向success -->
 			<result>/WEB-INF/content/UserInfo/UserList.jsp</result>
 		</action>
+		
+		<action name="UserLogin" class="action.UserInfoAction" method="UserLogin">
+			<!-- 不指定name，默认指向success -->
+			<result>/WEB-INF/content/UserInfo/UserLogin.jsp</result>
+		</action>
+		<action name="LoginToIndex" class="action.UserInfoAction" method="LoginToIndex">
+			<!-- 不指定name，默认指向success -->
+			<result>/WEB-INF/content/UserInfo/UserIndex.jsp</result>
+		</action>
 	</package>
 </struts>
