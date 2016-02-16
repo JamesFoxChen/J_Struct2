@@ -72,7 +72,7 @@ public class LoginAction extends SuperActionSupport {
 		return ERROR;
 	}
 
-	@SkipValidation
+	/*@SkipValidation
 	@Action(value = "ajaxExecute")
 	public String ajaxExecute() throws Exception {
 		String name = request.getParameter("name");
@@ -86,7 +86,7 @@ public class LoginAction extends SuperActionSupport {
 
 		System.err.println("Ajax Name:" + request.getParameter("name"));
 		return SUCCESS;
-	}
+	}*/
 
 	/*
 	 * // 登录提交 // 完整路径为：http://localhost:8080/login/loginIndex //

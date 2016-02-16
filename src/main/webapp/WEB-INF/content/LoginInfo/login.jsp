@@ -29,15 +29,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			$("#btnAjax").click(function() {
 				$.ajax({
 					type : "post",
-					url : 'login/ajaxExecute',
+					url : 'ajaxExecute',
 					data : {//设置数据源
-						name : 'James',
-						age : 18
+						userName : 'James',
+						password : '28'
 					},
 					dataType : "json",//设置需要返回的数据类型
-					success : function(data) {
-
-						
+					success : function(d) {
+                        alert(d.userName);
 					},
 					error : function(d) {
 						alert(d.responseText);
