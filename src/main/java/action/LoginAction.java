@@ -44,7 +44,7 @@ public class LoginAction extends SuperActionSupport {
 	@Action(value = "loginValidate", results = {
 			@Result(name = "success", location = "/WEB-INF/content/LoginInfo/success.jsp"),
 			@Result(name = "input", location = "/WEB-INF/content/LoginInfo/login.jsp") })
-	//@Authority("")
+	@Authority("")
 	public String loginValidate() throws Exception {
 		/*
 		 * if (this.getFieldErrors().size() > 0) { return INPUT; }

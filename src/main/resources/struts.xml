@@ -17,16 +17,9 @@
 	<!-- 是否使用struts的开发模式。开发模式会有更多的调试信息。默认值为false(生产环境下使用),开发阶段最好打开 -->
 	<constant name="struts.devMode" value="true" />
 	
-	
 	<package name="custom-default" extends="struts-default">
 		<interceptors>
-			<!--<interceptor name="loginInterceptor" class="interceptors.LoginInterceptor"></interceptor>-->
-			<!--
-			<interceptor-stack name="mydefault">
-			<interceptor-ref name="defaultStack" />
-			</interceptor-stack>-->
-
-			<!-- 申明自定义的权限控制拦截器 -->
+			<!-- 声明自定义的权限控制拦截器 -->
 			<interceptor name="loginInterceptor" class="interceptors.LoginInterceptor" />
 			<!-- 把自定义的权限控制拦截器和默认的拦截器栈加到新的自定义的拦截器栈 -->
 			<interceptor-stack name="myInterceptors">
@@ -36,11 +29,13 @@
 		</interceptors>
 
 		<!-- 指定新的自定义的拦截器栈为默认的拦截器栈，这样自定义的权限控制拦截器就可以发挥作用了 -->
+		<!-- 这里name属性值对应的是上述interceptor-stack name属性值 -->
 		<default-interceptor-ref name="myInterceptors"></default-interceptor-ref>
 		
+		<!-- 这里对应拦截器中return Action.LOGIN对应的页面-->
 		<global-results>
 			<result name="login">/WEB-INF/content/LoginInfo/login.jsp</result>
 		</global-results>
 	</package>
-	
+
 </struts>
