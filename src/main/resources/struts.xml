@@ -1,23 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-	"http://struts.apache.org/dtds/struts-2.3.dtd">
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <!-- .dtd 约束xml可能有哪些标签、不能有哪些标签 -->
 <struts>
 	<!-- 包含其它的struct配置文件，可以每个controller或业务设置一个 -->
-<!-- 	<include file="userInfoStructs.xml"></include>
-	<include file="actionStructs.xml"></include>
- -->
+	<!--
+	<include file="userInfoStructs.xml"></include>
+	<include file="actionStructs.xml"></include>-->
+
 	<!-- 在structs.xml定义常量节点，就不用使用单独的structs.properties文件 -->
 	<constant name="struts.i18n.encoding" value="UTF-8" />
-
 	<!-- 删除该节点或设置value=""效果相同 -->
 	<constant name="struts.action.extension" value="" />
 	<!-- 是否使用struts的开发模式。开发模式会有更多的调试信息。默认值为false(生产环境下使用),开发阶段最好打开 -->
 	<constant name="struts.devMode" value="true" />
+	
+	
+	<package name="custom-default" extends="struts-default">
+		<interceptors>
+			<!--<interceptor name="loginInterceptor" class="interceptors.LoginInterceptor"></interceptor>-->
+			<!--
+			<interceptor-stack name="mydefault">
+			<interceptor-ref name="defaultStack" />
+			</interceptor-stack>-->
 
-	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="false" 
-		/> <constant name="struts.devMode" value="true" /> <constant name="struts.allowed.action.names" 
-		value="[a-zA-Z0-9._!/\-]*"></constant> -->
+			<!-- 申明自定义的权限控制拦截器 -->
+			<interceptor name="loginInterceptor" class="interceptors.LoginInterceptor" />
+			<!-- 把自定义的权限控制拦截器和默认的拦截器栈加到新的自定义的拦截器栈 -->
+			<interceptor-stack name="myInterceptors">
+				<interceptor-ref name="loginInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 指定新的自定义的拦截器栈为默认的拦截器栈，这样自定义的权限控制拦截器就可以发挥作用了 -->
+		<default-interceptor-ref name="myInterceptors"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="login">/WEB-INF/content/LoginInfo/login.jsp</result>
+		</global-results>
+	</package>
+	
 </struts>

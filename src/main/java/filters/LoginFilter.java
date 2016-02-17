@@ -37,8 +37,8 @@ public class LoginFilter implements Filter {
 			url += "/";
 		
 		System.err.println("url:"+url);
-		//非登录验证页面不用过滤
-		if (url.startsWith("/") 
+		//非登录验证页面不用过滤，使用拦截器实现此功能
+	/*	if (url.startsWith("/") 
 				&&!url.contains("/login/login")
 				&&!url.contains("/login/loginValidate")
 				&&!url.contains("/ajaxExecute")) {
@@ -49,7 +49,7 @@ public class LoginFilter implements Filter {
 				response.sendRedirect("/login/loginError");
 				return;
 			}
-		}
+		}*/
 		chain.doFilter(sRequest, sResponse);
 	}
 

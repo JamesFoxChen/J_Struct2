@@ -17,8 +17,9 @@
 </head>
 <body>
 	<form action="loginValidate" method="post">
-		用户名： <input type="text" id="userName"> 密码： <input type="text"
-			id="password"> <input type="submit" value="登录">
+		用户名： <input type="text" id="userName" name="userName" value="天天"> 
+		密码： <input type="text" id="password" name="password" value="天天密码"> 
+		<input type="submit" value="登录">
 		<s:fielderror fieldName="userName" />
 	</form>
 	<input type="button" id="btnAjax" value="Ajax调用" />
