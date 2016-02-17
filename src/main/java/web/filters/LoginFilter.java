@@ -1,4 +1,4 @@
-package filters;
+package web.filters;
 
 import java.io.IOException;
 import java.util.Date;

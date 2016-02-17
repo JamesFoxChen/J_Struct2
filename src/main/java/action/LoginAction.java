@@ -1,17 +1,15 @@
 package action;
 
 import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
-import annotations.Authority;
-import common.Constants;
-
-import org.apache.struts2.convention.annotation.InterceptorRefs;
+import biz.common.Constants;
+import biz.common.annotations.Authority;
+import web.base.SuperActionSupport;
 
 @SuppressWarnings("serial")
 @ParentPackage("custom-default")

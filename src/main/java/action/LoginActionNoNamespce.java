@@ -12,6 +12,7 @@ import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
 import freemarker.template.SimpleDate;
+import web.base.SuperActionSupport;
 
 @ParentPackage("json-default")
 @Namespace("/login1")

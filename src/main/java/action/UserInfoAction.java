@@ -1,10 +1,8 @@
 package action;
 
-
+import dal.beans.*;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-
-import bean.UserInfo;
 
 public class UserInfoAction extends ActionSupport
 implements ModelDriven<UserInfo>

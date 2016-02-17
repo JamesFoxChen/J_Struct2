@@ -1,17 +1,14 @@
-package interceptors;
+package web.interceptors;
 
 import java.lang.reflect.Method;
 import java.util.Map;
-
-import org.apache.struts2.convention.annotation.InterceptorRef;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
-
-import annotations.Authority;
-import common.Constants;
+import biz.common.Constants;
+import biz.common.annotations.Authority;
 
 @SuppressWarnings("serial")
 public class LoginInterceptor extends AbstractInterceptor {

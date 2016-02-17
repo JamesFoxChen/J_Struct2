@@ -1,4 +1,4 @@
-package action;
+package web.base;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletResponse;
