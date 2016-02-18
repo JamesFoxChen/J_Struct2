@@ -17,10 +17,16 @@
 	<!-- 是否使用struts的开发模式。开发模式会有更多的调试信息。默认值为false(生产环境下使用),开发阶段最好打开 -->
 	<constant name="struts.devMode" value="true" />
 	
-	<package name="custom-default" extends="struts-default">
+	<!-- 约定Action包名 -->
+	<constant name="struts.convention.package.locators" value="controllers,action,actions,struts,struts2"/>
+	
+	<!-- 约定Action类名 -->
+	<constant name="struts.convention.action.suffix" value="Controller"/>
+	
+	<package name="custom-default" extends="json-default">
 		<interceptors>
 			<!-- 声明自定义的权限控制拦截器 -->
-			<interceptor name="loginInterceptor" class="interceptors.LoginInterceptor" />
+			<interceptor name="loginInterceptor" class="web.interceptors.LoginInterceptor" />
 			<!-- 把自定义的权限控制拦截器和默认的拦截器栈加到新的自定义的拦截器栈 -->
 			<interceptor-stack name="myInterceptors">
 				<interceptor-ref name="loginInterceptor" />
@@ -34,7 +40,7 @@
 		
 		<!-- 这里对应拦截器中return Action.LOGIN对应的页面-->
 		<global-results>
-			<result name="login">/WEB-INF/content/LoginInfo/login.jsp</result>
+			<result name="login">/WEB-INF/content/UserInfo/NoAuth.jsp</result>
 		</global-results>
 	</package>
 

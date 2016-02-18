@@ -25,31 +25,25 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest sRequest, ServletResponse sResponse, FilterChain chain)
 			throws IOException, ServletException {
 
-		System.err.println("Login Filter"+new Date().toString());
-		
-		HttpServletRequest request = (HttpServletRequest) sRequest;
+		/*HttpServletRequest request = (HttpServletRequest) sRequest;
 		HttpServletResponse response = (HttpServletResponse) sResponse;
 		HttpSession session = request.getSession();
 		String url = request.getServletPath();
-		//url：/login/loginIndex
+		// url：/login/loginIndex
 		String contextPath = request.getContextPath();
 		if (url.equals(""))
-			url += "/";
-		
-		System.err.println("url:"+url);
-		//非登录验证页面不用过滤，使用拦截器实现此功能
-	/*	if (url.startsWith("/") 
-				&&!url.contains("/login/login")
-				&&!url.contains("/login/loginValidate")
-				&&!url.contains("/ajaxExecute")) {
-																	
-			String user = (String) session.getAttribute("userName");
-			if (user == null) {
-				System.err.println("登录验证:未登录");
-				response.sendRedirect("/login/loginError");
-				return;
-			}
-		}*/
+			url += "/";*/
+
+		// 非登录验证页面不用过滤，使用拦截器实现此功能
+		/*
+		 * if (url.startsWith("/") &&!url.contains("/login/login")
+		 * &&!url.contains("/login/loginValidate")
+		 * &&!url.contains("/ajaxExecute")) {
+		 * 
+		 * String user = (String) session.getAttribute("userName"); if (user ==
+		 * null) { System.err.println("登录验证:未登录");
+		 * response.sendRedirect("/login/loginError"); return; } }
+		 */
 		chain.doFilter(sRequest, sResponse);
 	}
 

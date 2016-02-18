@@ -27,18 +27,18 @@ public class LoginInterceptor extends AbstractInterceptor {
 			//Constants.UserName=="UserName"
 			String user = (String) session.get(Constants.UserName);
 
-			System.err.println("拦截器起作用");
+			//System.err.println("拦截器起作用");
 			if (user == null) // 未登陆，跳转到登录页
 			{
-				System.err.println("进入拦截器：未登陆");
+				//System.err.println("进入拦截器：未登陆");
 				context.put("tip", "你还没有登录");
 				return Action.LOGIN;
 			} else {   //已登录，继续后续流程
-				System.err.println("进入拦截器：已登录");
+				//System.err.println("进入拦截器：已登录");
 				return invocation.invoke();
 			}
 		} else {
-			System.err.println("进入拦截器：没有使用注解");
+			//System.err.println("进入拦截器：没有使用注解");
 			return invocation.invoke();
 		}
 	}
