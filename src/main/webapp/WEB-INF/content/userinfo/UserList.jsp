@@ -5,13 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<%@ include file="/WEB-INF/content/Header.jsp"%>
 </head>
 <body>
-<h1><a href="/userinfo/loginout" onclick="return confirm('确认要注销吗?')">注销</a></h1>
-<br/>
-
-<h1>欢迎你：${sessionScope.UserName}</h1>
-
+<h1>this is UserList jsp</h1>
 </body>
 </html>

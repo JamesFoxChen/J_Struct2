@@ -4,6 +4,16 @@ public class UserInfo {
 	private long id;
 
 	private String userName;
+	
+	private String mobile;
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
 	public long getId() {
 		return id;

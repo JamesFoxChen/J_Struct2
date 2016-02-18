@@ -1,18 +1,29 @@
 package dal.dataaccess;
 
+import java.util.*;
+
 import org.apache.ibatis.session.SqlSession;
 import dal.beans.UserInfo;
 import framework.utils.MyBatisUtil;
 
 public class UserInfoDal {
 
-	public UserInfo Select() {
+	public UserInfo Get() {
 		SqlSession sqlSession = MyBatisUtil.getSqlSession();
 		IUserInfoMapper mapper = sqlSession.getMapper(IUserInfoMapper.class);
 		UserInfo bean = mapper.getById(13);
 		sqlSession.close();
 
 		return bean;
+	}
+	
+	public List<UserInfo> GetAll() {
+		SqlSession sqlSession = MyBatisUtil.getSqlSession();
+		IUserInfoMapper mapper = sqlSession.getMapper(IUserInfoMapper.class);
+		List<UserInfo> lstBean = mapper.getAll();
+		sqlSession.close();
+
+		return lstBean;
 	}
 
 	public int Insert(UserInfo userInfo) {
