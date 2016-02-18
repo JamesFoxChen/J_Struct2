@@ -1,13 +1,17 @@
 package dal.beans;
 
-import java.util.List;
-
 public class UserInfo {
-    private String userName;
-    
-    private String password;
-    
-    private List<UserInfo> userInfoList;
+	private long id;
+
+	private String userName;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getUserName() {
 		return userName;
@@ -25,11 +29,6 @@ public class UserInfo {
 		this.password = password;
 	}
 
-	public List<UserInfo> getUserInfoList() {
-		return userInfoList;
-	}
+	private String password;
 
-	public void setUserInfoList(List<UserInfo> userInfoList) {
-		this.userInfoList = userInfoList;
-	}
 }
